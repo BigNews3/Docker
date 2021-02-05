@@ -1,7 +1,5 @@
 FROM alpine
 
-EXPOSE 5000:8080
-
 RUN apk add --update-cache \
     python3 \
     py3-pip \
@@ -12,5 +10,8 @@ COPY requirements.txt /tmp/
 RUN pip install --requirement /tmp/requirements.txt
 COPY . /tmp/
 
-CMD ["/tmp/app/app.py"]
-ENTRYPOINT ["python3"]
+EXPOSE 5000:5000
+
+WORKDIR /tmp/app
+ENTRYPOINT [ "flask"]
+CMD [ "run", "--host", "0.0.0.0" ]

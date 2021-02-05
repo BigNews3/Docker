@@ -3,6 +3,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
+print('coucou')
+
 #route for home page
 @app.route("/")
 def index():
