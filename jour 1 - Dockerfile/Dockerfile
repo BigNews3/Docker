@@ -10,7 +10,7 @@ RUN apk add --update-cache \
 
 COPY requirements.txt /app/
 RUN pip install --requirement /app/requirements.txt
-COPY .. /app/
+COPY . /app/
 
 
 

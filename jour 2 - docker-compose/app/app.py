@@ -8,7 +8,7 @@ redis = Redis(host='redis-container', port=6379)
 @app.route('/')
 def hello():
     redis.incr('hits')
-    return ' - - - This basic web page has been viewed {} time(s) - - -'.format(redis.get('hits'))
+    return ' - - - great web page has been viewed {} time(s) - - -'.format(redis.get('hits'))
 
 
 if __name__ == "__main__":
