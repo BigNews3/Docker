@@ -14,7 +14,7 @@ COPY . /app/
 
 
 
-WORKDIR /app/app
+WORKDIR /app
 
 ENTRYPOINT [ "flask"]
 CMD [ "run", "--host", "0.0.0.0" ]
