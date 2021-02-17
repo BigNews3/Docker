@@ -1,0 +1,4 @@
+virtualenv
+Flask
+Redis
+mysql-connector-python
