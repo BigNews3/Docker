@@ -2,3 +2,6 @@ virtualenv
 Flask
 Redis
 mysql-connector-python
+sqlalchemy
+PyMySQL
+pytest

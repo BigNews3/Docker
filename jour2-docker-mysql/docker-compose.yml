@@ -8,8 +8,16 @@ services:
       - "5000:5000"
     volumes:
       - ./app:/app/
-    depends_on:
+    links:
       - db
+
+  test:
+    build: ./app
+    volumes:
+      - .docker/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+      - ./app:/app
+    command: [ 'pytest', './tests/test.py' ]
+
 
   db:
     image: mysql
